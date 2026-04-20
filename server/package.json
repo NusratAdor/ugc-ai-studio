@@ -6,8 +6,8 @@
   "type": "module",
   "scripts": {
     "start": "node dist/server.js",
-     "build": "tsc && cp configs/instrument.mjs dist/configs/instrument.mjs",
-    "build": "tsc"
+    "dev": "nodemon --exec tsx server.ts",
+    "build": "tsc && cp configs/instrument.mjs dist/configs/instrument.mjs"
   },
   "keywords": [],
   "author": "",

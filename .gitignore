@@ -1,0 +1,103 @@
+# ========================
+# Dependencies
+# ========================
+node_modules/
+.pnp
+.pnp.js
+
+# ========================
+# Build Output
+# ========================
+dist/
+dist-ssr/
+build/
+.next/
+out/
+*.local
+
+# ========================
+# Environment Variables
+# ========================
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+
+# ========================
+# Logs
+# ========================
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# ========================
+# TypeScript
+# ========================
+*.tsbuildinfo
+
+# ========================
+# Prisma Generated Client
+# ========================
+# Prisma generates this automatically
+server/generated/
+
+# ========================
+# Uploaded & Temp Files
+# ========================
+# Temporary generated videos before Cloudinary upload
+server/videos/
+uploads/
+
+# Video files
+*.mp4
+*.mov
+*.avi
+*.webm
+
+# ========================
+# Testing & Coverage
+# ========================
+coverage/
+.nyc_output/
+
+# ========================
+# Vercel
+# ========================
+.vercel/
+
+# ========================
+# Sentry
+# ========================
+.sentryclirc
+
+# ========================
+# OS Files
+# ========================
+.DS_Store
+Thumbs.db
+
+# ========================
+# Editor Directories
+# ========================
+.vscode/*
+!.vscode/extensions.json
+
+.idea/
+
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# ========================
+# Misc
+# ========================
+tmp/
+temp/
+.cache/

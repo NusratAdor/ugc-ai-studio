@@ -9,7 +9,7 @@ datasource db {
 
 model User {
   id        String   @id
-  email     String
+  email     String   @unique
   name      String
   image     String
   credits   Int      @default(20)
@@ -30,17 +30,19 @@ model Project {
   aspectRatio        String   @default("9:16")
   targetLength       Int      @default(5)
   uploadedImages     String[]
-  generatedImage     String   @default("")
-  generatedVideo     String   @default("")
+  generatedImage     String?
+  generatedVideo     String?  
   isGenerating       Boolean  @default(false)
   isPublished        Boolean  @default(false)
-  error              String   @default("")
+  error              String?   
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
   // Relations
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])         // PostgreSQL must scan every row without an index. With 10,000 projects this becomes slow. An index makes it O(log n) instead of O(n).
 }
 
 

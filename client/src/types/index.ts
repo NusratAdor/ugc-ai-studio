@@ -17,14 +17,14 @@ export interface User {
 
 export interface Project {
     id: string;
-    name?: string;
-    userId?: string;
+    name: string;
+    userId: string;
     user?: User;
     productName: string;
     productDescription?: string;
     userPrompt?: string;
     aspectRatio?: string;
-    targetLength?: string;
+    targetLength?: number;
     generatedImage?: string;
     generatedVideo?: string;
     isGenerating: boolean;

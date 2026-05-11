@@ -29,6 +29,7 @@ function App() {
 				<Route path='/plans' element={<Plans />} />
 				<Route path='/loading' element={<Loading />} />
 				
+				
 			</Routes>
 			
 

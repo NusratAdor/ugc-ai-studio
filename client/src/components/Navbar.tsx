@@ -9,6 +9,7 @@ import { useAuth, useClerk, UserButton, useUser } from "@clerk/react";
 import { toast } from "react-hot-toast";
 import api from "../configs/axios";
 
+
 export default function Navbar() {
 
   const navigate = useNavigate();
@@ -71,7 +72,7 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
           {navLinks.map((link) => (
             <Link
-              onClick={() => scrollTo(0, 0)}
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
               to={link.href}
               key={link.name}
               className="hover:text-white transition"

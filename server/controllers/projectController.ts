@@ -13,6 +13,7 @@ const replicate = new Replicate({
   auth: process.env.REPLICATE_API_KEY,
 });
 
+
 export const createProject = async (req: Request, res: Response) => {
   let tempProjectId: string;
   const { userId } = req.auth();
@@ -38,7 +39,7 @@ export const createProject = async (req: Request, res: Response) => {
   });
 
   if (!user || user.credits < 5) {
-    return res.status(401).json({ message: "Insufficient credits" });
+    return res.status(402).json({ message: "Insufficient credits" });
   } else {
     await prisma.user
       .update({
@@ -122,7 +123,7 @@ export const createProject = async (req: Request, res: Response) => {
       },
     });
 
-    res.json({ projectId: project.id });
+    res.json({ projectId: project.id, message: "Image generated successfully!" });
 
   } catch (error: any) {
     if (tempProjectId!) {
